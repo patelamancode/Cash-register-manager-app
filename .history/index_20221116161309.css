@@ -6,6 +6,6 @@
 #main-container{
     display: flex;
     flex-direction: column;
-    width: 50vw;
+    width: 50%;
     margin: auto;
 }
