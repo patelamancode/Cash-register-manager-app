@@ -6,7 +6,6 @@ const billAmount = document.querySelector('#bill-amount');
 const cashAmount = document.querySelector('#cash-amount');
 const checkButton = document.querySelector('.check-btn');
 const errorMessage = document.querySelector('.error-message');
-const notesDisplay = document.querySelector('.notes-number');
 
 // Testing console values for all inputs
 // checkButton.addEventListener('click', function(){
@@ -47,8 +46,7 @@ const numberOfNotesGiven = function(returnAmount){
     for(let i=0; i< notesArray.length; i++){
         let notesCount = Math.trunc(returnAmount/notesArray[i]);
         returnAmount = returnAmount%notesArray[i];
-        // console.log(notesCount)
-
+        console.log(notesCount)
     }
 }
 

@@ -6,7 +6,6 @@ const billAmount = document.querySelector('#bill-amount');
 const cashAmount = document.querySelector('#cash-amount');
 const checkButton = document.querySelector('.check-btn');
 const errorMessage = document.querySelector('.error-message');
-const notesDisplay = document.querySelector('.notes-number');
 
 // Testing console values for all inputs
 // checkButton.addEventListener('click', function(){
@@ -18,21 +17,15 @@ const displayErrorMessage = function (message) {
     errorMessage.style.backgroundColor = "red";
     errorMessage.innerText = message;
 }
-const hideErrorMessage = function(){
-    errorMessage.style.display = "none";
-
-}
-
-const notesArray = [2000, 1000, 500, 200, 100, 50, 20, 10, 5, 1];
 
 
 checkButton.addEventListener('click', function amountValidation() {
-    hideErrorMessage();
+    errorMessage.style.display = "none";
 
     if (billAmount.value > 0) {
         if(cashAmount.value > billAmount.value){
             const returnAmount = cashAmount.value - billAmount.value;
-            numberOfNotesGiven(returnAmount);
+            numberOfNotes(returnAmount);
         }
         else{
             displayErrorMessage("Invalid Cash value as per Bill amount");
@@ -43,13 +36,6 @@ checkButton.addEventListener('click', function amountValidation() {
     }
 })
 
-const numberOfNotesGiven = function(returnAmount){
-    for(let i=0; i< notesArray.length; i++){
-        let notesCount = Math.trunc(returnAmount/notesArray[i]);
-        returnAmount = returnAmount%notesArray[i];
-        // console.log(notesCount)
-
-    }
+const numberOfNotes = function(returnAmount){
+    console.log("100 number of notes");
 }
-
-// 1550
