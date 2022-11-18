@@ -7,23 +7,32 @@ const cashAmount = document.querySelector('#cash-amount');
 const checkButton = document.querySelector('.check-btn');
 const errorMessage = document.querySelector('.error-message');
 const notesDisplay = document.querySelectorAll('.notes-number');
+// from here
 const hideContent = document.querySelector('.sub-container');
 const nextButton = document.querySelector('#next-btn');
 
+
+// Testing console values for all inputs
+// checkButton.addEventListener('click', function(){
+//     console.log(cashAmount.value);
+// })
+
 nextButton.addEventListener('click', function(){
-    hideContent.style.display = "flex";
-    nextButton.style.display = "none";
-});
+    hideContent.style.display = "flex"
+    // hideContent.style.flexDirection = "column"
+    nextButton.style.display = "none"
+})
+// to here
 
 const displayErrorMessage = function (message) {
     errorMessage.style.display = "block";
     errorMessage.style.backgroundColor = "red";
     errorMessage.innerText = message;
-};
+}
 const hideErrorMessage = function(){
     errorMessage.style.display = "none";
 
-};
+}
 
 const notesArray = [2000, 1000, 500, 200, 100, 50, 20, 10, 5, 1];
 const numberOfNotesGiven = function(returnAmount){
@@ -32,7 +41,7 @@ const numberOfNotesGiven = function(returnAmount){
         returnAmount = returnAmount%notesArray[i];
         notesDisplay[i].innerText = notesCount; 
     }
-};
+}
 
 checkButton.addEventListener('click', function amountValidation() {
     hideErrorMessage();
