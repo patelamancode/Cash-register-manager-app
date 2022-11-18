@@ -20,7 +20,6 @@ const nextButton = document.querySelector('#next-btn');
 nextButton.addEventListener('click', function(){
     hideContent.style.display = "flex"
     hideContent.style.flexDirection = "column"
-    nextButton.style.display = "none"
 })
 // to here
 
@@ -47,7 +46,7 @@ checkButton.addEventListener('click', function amountValidation() {
     hideErrorMessage();
 
     if (billAmount.value > 0) {
-        if(cashAmount.value >= billAmount.value){
+        if(cashAmount.value > billAmount.value){
             const returnAmount = cashAmount.value - billAmount.value;
             numberOfNotesGiven(returnAmount);
         }

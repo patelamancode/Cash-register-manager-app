@@ -55,15 +55,8 @@ button{
 }
 
 caption{
-    margin-top: 1.5rem;
+    margin-top: 2rem;
     margin-bottom: 1rem;
-}
-
-table, th, td{
-    border: 1px solid black;
-}
-table{
-    border-collapse: collapse;
 }
 
 .sub-container{

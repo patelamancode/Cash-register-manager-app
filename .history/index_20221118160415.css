@@ -59,11 +59,8 @@ caption{
     margin-bottom: 1rem;
 }
 
-table, th, td{
+table, tr{
     border: 1px solid black;
-}
-table{
-    border-collapse: collapse;
 }
 
 .sub-container{

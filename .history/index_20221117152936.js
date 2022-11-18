@@ -7,22 +7,22 @@ const cashAmount = document.querySelector('#cash-amount');
 const checkButton = document.querySelector('.check-btn');
 const errorMessage = document.querySelector('.error-message');
 const notesDisplay = document.querySelectorAll('.notes-number');
-// from here
-const hideContent = document.querySelector('.sub-container');
+const cashLabel = document.querySelector('.cash-section');
+const tableContent = document.querySelector('table');
 const nextButton = document.querySelector('#next-btn');
-
 
 // Testing console values for all inputs
 // checkButton.addEventListener('click', function(){
 //     console.log(cashAmount.value);
 // })
 
-nextButton.addEventListener('click', function(){
-    hideContent.style.display = "flex"
-    hideContent.style.flexDirection = "column"
-    nextButton.style.display = "none"
-})
-// to here
+cashLabel.style.display = "none";
+
+
+
+const displayContent = function(){
+
+}
 
 const displayErrorMessage = function (message) {
     errorMessage.style.display = "block";
@@ -35,19 +35,13 @@ const hideErrorMessage = function(){
 }
 
 const notesArray = [2000, 1000, 500, 200, 100, 50, 20, 10, 5, 1];
-const numberOfNotesGiven = function(returnAmount){
-    for(let i=0; i< notesArray.length; i++){
-        let notesCount = Math.trunc(returnAmount/notesArray[i]);
-        returnAmount = returnAmount%notesArray[i];
-        notesDisplay[i].innerText = notesCount; 
-    }
-}
+
 
 checkButton.addEventListener('click', function amountValidation() {
     hideErrorMessage();
 
     if (billAmount.value > 0) {
-        if(cashAmount.value >= billAmount.value){
+        if(cashAmount.value > billAmount.value){
             const returnAmount = cashAmount.value - billAmount.value;
             numberOfNotesGiven(returnAmount);
         }
@@ -60,6 +54,12 @@ checkButton.addEventListener('click', function amountValidation() {
     }
 })
 
-
+const numberOfNotesGiven = function(returnAmount){
+    for(let i=0; i< notesArray.length; i++){
+        let notesCount = Math.trunc(returnAmount/notesArray[i]);
+        returnAmount = returnAmount%notesArray[i];
+        notesDisplay[i].innerText = notesCount; 
+    }
+}
 
 // 1550
