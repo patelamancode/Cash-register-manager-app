@@ -17,7 +17,7 @@ nextButton.addEventListener('click', function(){
     nextButton.style.display = "none";
     if(!billAmount.value){
         hideContent.style.display = "none";
-        mainError.style.display = "block"
+        mainError.style.display = "none"
     }
 });
 

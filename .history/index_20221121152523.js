@@ -9,16 +9,18 @@ const errorMessage = document.querySelector('.error-message');
 const notesDisplay = document.querySelectorAll('.notes-number');
 const hideContent = document.querySelector('.sub-container');
 const nextButton = document.querySelector('#next-btn');
-const mainError = document.querySelector('.error-check-for-bill');
+// const mainError = document.querySelector('error-check-for-bill');
 
 
 nextButton.addEventListener('click', function(){
     hideContent.style.display = "flex";
     nextButton.style.display = "none";
-    if(!billAmount.value){
-        hideContent.style.display = "none";
-        mainError.style.display = "block"
-    }
+    // if(!billAmount.value){
+    //     hideContent.style.display = "none";
+    //     mainError.innerText = "Please make sure input bill amount must be positive and non-zero value";
+    //     mainError.style.display ="block";
+    //     mainError.style.backgroundColor = "red";
+    // }
 });
 
 const displayErrorMessage = function (message) {

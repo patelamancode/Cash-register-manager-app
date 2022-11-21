@@ -34,9 +34,7 @@ h1{
 .error-check-for-bill{
     background-color: yellow;
     height: 20px;
-    display: none;
 }
-
 label{
     text-align: left;
     margin-bottom: 10px;

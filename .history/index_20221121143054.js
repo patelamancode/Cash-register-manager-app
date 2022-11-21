@@ -9,15 +9,12 @@ const errorMessage = document.querySelector('.error-message');
 const notesDisplay = document.querySelectorAll('.notes-number');
 const hideContent = document.querySelector('.sub-container');
 const nextButton = document.querySelector('#next-btn');
-const mainError = document.querySelector('.error-check-for-bill');
-
 
 nextButton.addEventListener('click', function(){
     hideContent.style.display = "flex";
     nextButton.style.display = "none";
     if(!billAmount.value){
-        hideContent.style.display = "none";
-        mainError.style.display = "block"
+        displayErrorMessage("Please make sure input bill amount must be positive and non-zero value")
     }
 });
 
@@ -44,12 +41,9 @@ checkButton.addEventListener('click', function amountValidation() {
     hideErrorMessage();
 
     if (billAmount.value > 0) {
-        if(cashAmount.value > billAmount.value){
+        if(cashAmount.value >= billAmount.value){
             const returnAmount = cashAmount.value - billAmount.value;
             numberOfNotesGiven(returnAmount);
-        }
-        else if(cashAmount.value = billAmount.value){
-            displayErrorMessage("AMOUNTS ARE EQUALS NO NEED FOR CHANGE")
         }
         else{
             displayErrorMessage("Invalid Cash value as per Bill amount");
