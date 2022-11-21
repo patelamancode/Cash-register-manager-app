@@ -6,7 +6,7 @@ const notesDisplay = document.querySelectorAll('.notes-number');
 const hideContent = document.querySelector('.sub-container');
 const nextButton = document.querySelector('#next-btn');
 const mainError = document.querySelector('.error-check-for-bill');
-const CURRENCY_ARRAY = [2000, 1000, 500, 200, 100, 50, 20, 10, 5, 1];
+const CURRENCYARRAY = [2000, 1000, 500, 200, 100, 50, 20, 10, 5, 1];
 
 nextButton.addEventListener('click', function () {
     if (!billAmount.value) {
@@ -34,9 +34,9 @@ const hideErrorMessage = function () {
 };
 
 const numberOfNotesGiven = function (returnAmount) {
-    for (let i = 0; i < CURRENCY_ARRAY .length; i++) {
-        let notesCount = Math.trunc(returnAmount / CURRENCY_ARRAY [i]);
-        returnAmount = returnAmount % CURRENCY_ARRAY [i];
+    for (let i = 0; i < CURRENCYARRAY .length; i++) {
+        let notesCount = Math.trunc(returnAmount / CURRENCYARRAY [i]);
+        returnAmount = returnAmount % CURRENCYARRAY [i];
         notesDisplay[i].innerText = notesCount;
     }
     
@@ -44,6 +44,7 @@ const numberOfNotesGiven = function (returnAmount) {
 
 checkButton.addEventListener('click', function amountValidation() {
     hideErrorMessage();
+
     if (billAmount.value > 0) {
         if (cashAmount.value > billAmount.value) {
             const returnAmount = cashAmount.value - billAmount.value;
